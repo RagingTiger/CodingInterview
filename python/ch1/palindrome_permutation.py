@@ -18,7 +18,7 @@ Usage:
 '''
 
 
-def palindrome(word):
+def answer(word):
     '''
     Function to parse string to see if it is a palindrome.
     '''
@@ -64,4 +64,4 @@ if __name__ == '__main__':
     args = docopt(__doc__)
 
     # execute
-    print palindrome(args['<word>'])
+    print answer(args['<word>'])
