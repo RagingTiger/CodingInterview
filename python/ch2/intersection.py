@@ -14,7 +14,6 @@ Usage:
     intersection case1
     intersection case2
     intersection case3
-    intersection -m <N> <M>
 '''
 
 # libraries
