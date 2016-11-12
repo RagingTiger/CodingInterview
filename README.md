@@ -3,7 +3,7 @@
 </p>
 
 ## Description
-This repository contains solutions to the [Cracking the Coding Interview](http://a.co/eflV49b) problems by [Gayle Laakmann Mcdowell](http://www.gayle.com/). They are organized by language and chapter.
+This repository contains my solutions to the [Cracking the Coding Interview](http://a.co/eflV49b) problems by [Gayle Laakmann Mcdowell](http://www.gayle.com/). They are organized by language and chapter.
 Each solution follows a simple format:
 
 ```
@@ -22,6 +22,7 @@ Complexity: TODO
 Usage:
     palindrome_permutation <word>
 ```
+
 Where author, email, problem statement, and complexity are self explanatory,
 and usage is used by the [docopt](http://docopt.org/) library to parse the
 arguments and generate a usage message.
