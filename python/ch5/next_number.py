@@ -6,7 +6,7 @@ Email: jander43@vols.utk.edu
 Problem Statement:
     Given a positive integer, print the next smallest and the next largest
 number that have the same number of 1 bits in their binary representation.
-Complexity: TODO
+Complexity: O(N)
 Usage: nex_number <int>
 '''
 
@@ -15,7 +15,6 @@ def answer(n):
 
     # get bit string
     bitstring = bin(n).split('b')[1]
-    print bitstring
 
     # get original length
     origlen = len(bitstring)
