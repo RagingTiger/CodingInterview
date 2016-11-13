@@ -11,6 +11,7 @@ Usage: nex_number <int>
 '''
 
 
+# function
 def answer(n):
 
     # get bit string
