@@ -10,7 +10,7 @@ EXAMPLE
 Input:    1775   (or: 11011101111)
 Output:   8
 Complexity: O(N)
-Usage: flip_bit_to_win <integer>
+Usage: flip_bit_to_win <int>
 '''
 
 
@@ -55,4 +55,4 @@ if __name__ == '__main__':
     args = docopt(__doc__)
 
     # return
-    print answer(int(args['<integer>']))
+    print answer(int(args['<int>']))
