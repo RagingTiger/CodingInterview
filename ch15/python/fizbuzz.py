@@ -25,6 +25,11 @@ import threading
 def threading_closure(word):
     '''
     Closure for wrapping.
+    Reference:
+        "Design Patterns: Elements of Reusable Object-Oriented Software",
+         Adapter Pattern, pages: 325 - 330.
+         "Intermediate Python Programming",
+         Closures, pages: 83 - 85
     '''
     # results
     def thread_results():
