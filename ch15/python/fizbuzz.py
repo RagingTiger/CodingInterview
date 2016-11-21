@@ -18,32 +18,38 @@ Usage: fizzbuzz <int>
 '''
 
 # libraries
-import thread
+import threading
 
 
-# decorator
-def decorator(words):
+# closure
+def threading_closure(word):
     '''
-    Decorator for wrapping.
+    Closure for wrapping.
     '''
-    # decorator function
-    def thread_print(boolean):
+    # results
+    def thread_results():
+        print word
+
+    # closed over function
+    def thread_execute():
         '''
         Function to print thread specific output.
         '''
-        print words
+        t = threading.Thread(target=thread_results)
+        t.start()
+        t.join()
 
     # return function
-    return thread_print
+    return thread_execute
 
 
 # function
 def answer(n):
 
     # generating functions
-    fizz = decorator('fizz')
-    buzz = decorator('buzz')
-    fizzbuzz = decorator('fizzbuzz')
+    threads = {}
+    for name in ['fizz', 'buzz', 'fizzbuzz']:
+        threads[name] = threading_closure(name)
 
     # iterate from
     for i in range(1, n+1):
@@ -54,11 +60,11 @@ def answer(n):
 
         # fizz buzz
         if three and five:
-            fizzbuzz(five and three)
+            threads['fizzbuzz']()
         elif three:
-            fizz(three)
+            threads['fizz']()
         elif five:
-            buzz(five)
+            threads['buzz']()
         else:
             print i
 
