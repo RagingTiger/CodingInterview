@@ -52,9 +52,8 @@ def threading_closure(word):
 def answer(n):
 
     # generating functions
-    threads = {}
-    for name in ['fizz', 'buzz', 'fizzbuzz']:
-        threads[name] = threading_closure(name)
+    fb = ['fizz', 'buzz', 'fizzbuzz']
+    threads = {name: threading_closure(name) for name in fb}
 
     # iterate from
     for i in range(1, n+1):
@@ -71,6 +70,7 @@ def answer(n):
         elif five:
             threads['buzz']()
         else:
+            # NOTE: should be in thread
             print i
 
 
