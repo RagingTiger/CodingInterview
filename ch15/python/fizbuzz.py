@@ -28,7 +28,7 @@ def threading_closure(word):
     Reference:
         "Design Patterns: Elements of Reusable Object-Oriented Software",
          Adapter Pattern, pages: 325 - 330.
-         "Intermediate Python Programming",
+        "Intermediate Python Programming",
          Closures, pages: 83 - 85
     '''
     # results
@@ -70,8 +70,8 @@ def answer(n):
         elif five:
             threads['buzz']()
         else:
-            # NOTE: should be in thread
-            print i
+            # called function that is returned
+            threading_closure(i)()
 
 
 # executable
