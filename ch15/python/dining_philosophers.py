@@ -14,3 +14,6 @@ prevents deadlocks.
 Complexity: TODO
 Usage: dining_philosophers
 '''
+
+# libraries
+import threading
