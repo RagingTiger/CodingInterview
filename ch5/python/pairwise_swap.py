@@ -11,14 +11,20 @@ Complexity: TODO
 Usage: pairwise_swap <N>
 '''
 
+# libraries
+import sys
+
 
 def answer(integer):
     '''
     Function to flip bits.
     '''
+    # get bit length of max int
+    bitlen = len(bin(sys.maxint).split('b')[1]) + 1
+
     # generate bitmasks
-    evenmask = int(''.join([str(i % 2) for i in range(64)]), 2)
-    oddmask = int(''.join([str(i % 2) for i in range(1, 65)]), 2)
+    evenmask = int(''.join([str(i % 2) for i in range(bitlen)]), 2)
+    oddmask = int(''.join([str(i % 2) for i in range(1, bitlen+1)]), 2)
 
     # extract odd and even bits
     evenbits = integer & evenmask
