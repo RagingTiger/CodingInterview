@@ -12,8 +12,9 @@ Usage: minimal_tree
 
 
 # functions
-def answer():
-    pass
+def answer(array):
+
+    tree = Tree(array)
 
 
 # classes
@@ -24,7 +25,7 @@ class Tree(object):
     # constructor
     def __init__(self, array):
 
-        self.root_node = recursive_tree_build(array)
+        self.root_node = _recursive_tree_build(array)
 
     # internal method
     def _recursive_build_tree(self, array):
@@ -48,6 +49,24 @@ class Tree(object):
 
         # return
         return node
+
+    def inorder(self):
+        '''
+        Method to traverse tree inorder
+        '''
+        pass
+
+    def preorder(self):
+        '''
+        Method to traverse tree preorder
+        '''
+        pass
+
+    def postorder(self):
+        '''
+        Method to traverse tree postorder
+        '''
+        pass
 
 
 class Node(object):
