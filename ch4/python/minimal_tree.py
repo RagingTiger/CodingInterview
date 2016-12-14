@@ -75,8 +75,13 @@ class Node(object):
     '''
     # constructor
     def __init__(self, value):
+        # store value
         self.value = value
+
+        # store left node
         self.left = None
+
+        # store right node
         self.right = None
 
 
