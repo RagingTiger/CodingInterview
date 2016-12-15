@@ -7,18 +7,18 @@ Problem Statement:
     Given a sorted (increasing order) array with unique integer elements, write
 an algorithm to create a binary search tree with minimal height.
 Complexity: O(N)
-Usage: minimal_tree
+Usage: minimal_tree <traversal_order>
 '''
 
 
 # functions
-def answer(array):
+def answer(array, order):
 
     # get instance of Tree
     tree = Tree(array)
 
     # traverse
-    tree.traverse('inorder')
+    tree.traverse(order)
 
 
 # classes
@@ -48,15 +48,14 @@ class Tree(object):
 
         # get left and right node
         node.left = self._recursive_build_tree(array[0:root])
-        node.right = self._recursive_build_tree(array[root:length-1])
+        node.right = self._recursive_build_tree(array[root+1:length])
 
         # return
         return node
 
     def traverse(self, funcname):
         '''
-        Private method to be used in traversal. Accepts string of traversal
-        method desired.
+        Private method accepts string of desired traversal method
         '''
         # now execute passed function
         exec 'self._{0}(self.root_node)'.format(funcname)
@@ -67,26 +66,44 @@ class Tree(object):
         '''
         # check if 'None'
         if node:
-            # first vist left subtree
+            # first vist left child
             self._inorder(node.left)
 
-            # then visit root
+            # then visit parent
             print node.value
 
-            # last visit right subtree
+            # last visit right child
             self._inorder(node.right)
 
-    def _preorder(self):
+    def _preorder(self, node):
         '''
         Private method to traverse tree preorder
         '''
-        pass
+        # check if 'None'
+        if node:
+            # first vist the parent
+            print node.value
 
-    def _postorder(self):
+            # then visit the left child
+            self._preorder(node.left)
+
+            # then visit the right child
+            self._preorder(node.right)
+
+    def _postorder(self, node):
         '''
         Private method to traverse tree postorder
         '''
-        pass
+        # check if 'None'
+        if node:
+            # first vist left child
+            self._postorder(node.left)
+
+            # then vist right child
+            self._postorder(node.right)
+
+            # then visit parent
+            print node.value
 
 
 class Node(object):
@@ -118,4 +135,4 @@ if __name__ == '__main__':
     data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
     # run
-    answer(data)
+    answer(data, args['<traversal_order>'])
