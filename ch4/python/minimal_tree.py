@@ -50,6 +50,13 @@ class Tree(object):
         # return
         return node
 
+    # internal method
+    def _traverse(self, node):
+        '''
+        Private method to be used in traversal
+        '''
+        pass
+
     def inorder(self):
         '''
         Method to traverse tree inorder
@@ -94,5 +101,8 @@ if __name__ == '__main__':
     # get args
     args = docopt(__doc__)
 
+    # test data
+    data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
     # run
-    answer()
+    answer(data)
