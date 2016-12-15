@@ -14,7 +14,11 @@ Usage: minimal_tree
 # functions
 def answer(array):
 
+    # get instance of Tree
     tree = Tree(array)
+
+    # traverse
+    tree.traverse('inorder')
 
 
 # classes
@@ -25,9 +29,8 @@ class Tree(object):
     # constructor
     def __init__(self, array):
 
-        self.root_node = _recursive_tree_build(array)
+        self.root_node = self._recursive_build_tree(array)
 
-    # internal method
     def _recursive_build_tree(self, array):
 
         # get length
@@ -50,28 +53,38 @@ class Tree(object):
         # return
         return node
 
-    # internal method
-    def _traverse(self, node):
+    def traverse(self, funcname):
         '''
-        Private method to be used in traversal
+        Private method to be used in traversal. Accepts string of traversal
+        method desired.
+        '''
+        # now execute passed function
+        exec 'self._{0}(self.root_node)'.format(funcname)
+
+    def _inorder(self, node):
+        '''
+        Private method to traverse tree inorder
+        '''
+        # check if 'None'
+        if node:
+            # first vist left subtree
+            self._inorder(node.left)
+
+            # then visit root
+            print node.value
+
+            # last visit right subtree
+            self._inorder(node.right)
+
+    def _preorder(self):
+        '''
+        Private method to traverse tree preorder
         '''
         pass
 
-    def inorder(self):
+    def _postorder(self):
         '''
-        Method to traverse tree inorder
-        '''
-        pass
-
-    def preorder(self):
-        '''
-        Method to traverse tree preorder
-        '''
-        pass
-
-    def postorder(self):
-        '''
-        Method to traverse tree postorder
+        Private method to traverse tree postorder
         '''
         pass
 
