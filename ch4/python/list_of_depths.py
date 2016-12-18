@@ -54,7 +54,7 @@ class BinaryTree(mt.Tree):
                     temp.append(node.right)
 
             # copy temp list
-            # print node_list
+            print node_list
             node_list = temp[:]
 
 
