@@ -121,6 +121,11 @@ class Node(object):
         # store right node
         self.right = None
 
+    # for printing and repr()
+    def __repr__(self):
+        return '{0} {1}: object at {2}'.format(self.__class__.__name__,
+                                               self.value, id(self))
+
 
 # executable
 if __name__ == '__main__':
