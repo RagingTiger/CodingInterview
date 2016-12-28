@@ -9,22 +9,42 @@ write a method to find the location of a given string.
 EXAMPLE
 Input: ball, {"at", "", "", "", "ball", "", "", "cat", "", "", "dad", "", ""}
 Output: 4
-Complexity: O(N)
+Complexity: O(S*LgN)
 Usage: sparse_search case1
 '''
 
+# NOTES:
+# array is sorted (assumed in order from least to greatest)
+# this is a “search” problem
+# we are returning the given index of the located string or ‘not found’ if not
+# found null strings are there to “disrupt” binary search (this implies binary
+# search
+# is the solution what a surprise !!!!! :) )
+# get array.length() / 2
+# initial problem is finding a “context string” to know which half to search
+# O(lgN) + O(lgN)
+#
+# WALKTHROUGH:
+# # step 1
+# {‘at’, ‘’, ‘’, ‘’, ‘ball’, ‘’, ‘’, ‘car’, ‘’, ‘’, ‘dad’, ‘’, ‘’}
+#
+# array.length()/2 = 6
+# array[6] = ‘’
+#
+# # step 2: recurse binary_search
+# binary_search(array[0:6+1], word)
+# binary_search(array[6+1:array.length+1], word)
 
-# function
-def answer(string, array):
 
-    # check for string
-    if string in array:
-        for i, s in enumerate(array):
-            if s is string:
-                return i
+# most basic solution: O(N)
+def answer(array, word):
 
-    # exit
-    return None
+    for i, w in enumerate(array):
+        if w == word:
+            return i
+
+return 'not found'
+
 
 # executable
 if __name__ == '__main__':
@@ -37,8 +57,8 @@ if __name__ == '__main__':
 
     # control flow
     if args['case1']:
-        string = 'bad'
+        word = 'bad'
         array = ['abba', '', 'back', 'bad', '', '', '', 'cat', 'dance', 'gray']
 
     # run
-    print answer(string, array)
+    print answer(array, word)
