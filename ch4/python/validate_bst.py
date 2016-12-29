@@ -10,7 +10,7 @@ Usage: TODO
 '''
 
 
-# libraries
+# code from 'check_balanced.py'
 import check_balanced as cb
 
 

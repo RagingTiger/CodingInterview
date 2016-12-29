@@ -12,7 +12,7 @@ Usage: checked_balanced <input_size>
 '''
 
 
-# libraries
+# code from 'list_of_depths.py'
 import list_of_depths as ld
 
 

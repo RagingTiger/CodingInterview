@@ -11,7 +11,7 @@ Complexity: O(N)
 Usage: list_of_depths <input_size>
 '''
 
-# import problem 4.2
+# code from 'minimal_tree.py'
 import minimal_tree as mt
 
 
