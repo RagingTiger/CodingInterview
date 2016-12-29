@@ -28,7 +28,7 @@ def answer(data):
 # classes
 class BinaryTree(mt.Tree):
     '''
-    Class that inherits form 'Tree' class and implements algorithmic solution
+    Class that inherits from 'Tree' class and implements algorithmic solution
     to the above problem
     '''
     # constructor
@@ -36,7 +36,9 @@ class BinaryTree(mt.Tree):
         mt.Tree.__init__(self, data)
 
     def list_depths(self):
-
+        '''
+        Method to print out list of nodes at each depth
+        '''
         # get root of BST
         node_list = [self.root_node]
 
