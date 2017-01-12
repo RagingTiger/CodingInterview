@@ -1,0 +1,30 @@
+# step one
+- clarification: make clear and concise bullet pointed notes on the problem
+- NOTE: you will likely revisit these notes and edit/add notes during course
+  of problem solving
+- purpose: this section helps guide your thoughts, and helps you to remain
+  clear about what is the problem
+
+# step two
+- basic solution: create section for basic solution 
+- NOTE: write the most basic solution the problem, and the Big O notation for 
+  that solution.
+- purpose: basic solution gives you a 'foundation' to BUILD better solutions,
+  and also helps verify your understanding of the problem
+
+# step three
+- advanced solution: create section for advanced solution that builds on
+  the basic solution from '# step two'
+- NOTE: typically this will be the hardest part, and as such it will be 
+  important to leave a 'bread crumb trail' through your process to keep from
+  getting lost. This will likely be added to the 'Notes' section of 
+  '# section one.'
+- purpose: this is the most difficult part of the process, and will depend
+  highly on your master of steps one and two
+
+# step four
+- recurse: revist '# step one' and repeat as necessary
+- NOTE: this step is usually executed from steps two and three
+- purpose: it's important to realize that the problem solving process is
+  recursive in nature, and steps 1 - 3 are applied again and again on the
+  sub problems within the main problem
